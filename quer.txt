@@ -1,0 +1,19 @@
+{
+  class: 'Project',
+  condition: {
+    where: {
+      'name': 'lxm'
+      'username': {'$ne': 'lxm'},
+      'age': {'$gt': 22},
+      '$and': {
+        'price': {'$ne': 199},
+        'price': {'$gt': 100},
+      } 
+    },
+    skip: 100,
+    limit: 100,
+    include: "user", 
+    keys: "name,name2", 
+    order: "-updatedAt"
+  }
+}
