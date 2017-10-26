@@ -1,0 +1,368 @@
+{
+	"UserIssueMap": {
+		"objectId": {
+			"type": "String"
+		},
+		"project": {
+			"className": "Project",
+			"type": "Pointer"
+		},
+		"isRead": {
+			"default": "True",
+			"required": "True",
+			"type": "Boolean"
+		},
+		"role": {
+			"required": "True",
+			"type": "Number"
+		},
+		"user": {
+			"className": "_User",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"readProgress": {
+			"default": "0",
+			"required": "False",
+			"type": "Number"
+		},
+		"issue": {
+			"className": "Issue",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"createdAt": {
+			"type": "Date"
+		}
+	},
+	"UserIssueRole": {
+		"objectId": {
+			"type": "String"
+		},
+		"role": {
+			"required": "True",
+			"type": "Number"
+		},
+		"user": {
+			"className": "_User",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"issue": {
+			"className": "Issue",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"createdAt": {
+			"type": "Date"
+		}
+	},
+	"Todo": {
+		"content": {
+			"type": "String"
+		},
+		"createdAt": {
+			"type": "Date"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"updatedAt": {
+			"type": "Date"
+		}
+	},
+	"Company": {
+		"displayName": {
+			"required": "True",
+			"type": "String"
+		},
+		"name": {
+			"required": "True",
+			"type": "String"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"shortName": {
+			"type": "String"
+		},
+		"createdAt": {
+			"type": "Date"
+		}
+	},
+	"UserProjectMap": {
+		"objectId": {
+			"type": "String"
+		},
+		"project": {
+			"className": "Project",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"role": {
+			"default": "2",
+			"required": "True",
+			"type": "Number"
+		},
+		"user": {
+			"className": "_User",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"createdAt": {
+			"type": "Date"
+		}
+	},
+	"Project": {
+		"name": {
+			"type": "String"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"pics": {
+			"type": "Array"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"createdAt": {
+			"type": "Date"
+		},
+		"description": {
+			"type": "String"
+		}
+	},
+	"User": {
+		"username": {
+			"type": "String"
+		},
+		"authData": {
+			"type": "Object"
+		},
+		"realName": {
+			"default": "anonymous",
+			"required": "True",
+			"type": "String"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"nickname": {
+			"type": "String"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"salt": {
+			"type": "String"
+		},
+		"sessionToken": {
+			"type": "String"
+		},
+		"emailVerified": {
+			"type": "Boolean"
+		},
+		"password": {
+			"type": "String"
+		},
+		"mobilePhoneNumber": {
+			"type": "String"
+		},
+		"email": {
+			"type": "String"
+		},
+		"createdAt": {
+			"type": "Date"
+		},
+		"mobilePhoneVerified": {
+			"type": "Boolean"
+		}
+	},
+	"File": {
+		"name": {
+			"type": "String"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"url": {
+			"type": "String"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"bucket": {
+			"type": "String"
+		},
+		"mime_type": {
+			"type": "String"
+		},
+		"key": {
+			"type": "String"
+		},
+		"provider": {
+			"type": "String"
+		},
+		"createdAt": {
+			"type": "Date"
+		},
+		"metaData": {
+			"type": "Object"
+		}
+	},
+	"Department": {
+		"displayName": {
+			"required": "True",
+			"type": "String"
+		},
+		"name": {
+			"required": "True",
+			"type": "String"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"company": {
+			"className": "Company",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"shortName": {
+			"type": "String"
+		},
+		"createdAt": {
+			"type": "Date"
+		}
+	},
+	"Reply": {
+		"originalPhase": {
+			"type": "Number"
+		},
+		"description": {
+			"required": "False",
+			"type": "String"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"actionTargetUser": {
+			"className": "_User",
+			"type": "Pointer"
+		},
+		"numero": {
+			"required": "True",
+			"type": "Number"
+		},
+		"pics": {
+			"className": "_File",
+			"type": "Pointer"
+		},
+		"actionTargetType": {
+			"default": "0",
+			"type": "Number"
+		},
+		"updatedPhase": {
+			"type": "Number"
+		},
+		"isPhaseUpdated": {
+			"default": "False",
+			"required": "True",
+			"type": "Boolean"
+		},
+		"createdBy": {
+			"className": "_User",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"actionType": {
+			"default": "0",
+			"required": "True",
+			"type": "Number"
+		},
+		"issue": {
+			"className": "Issue",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"createdAt": {
+			"type": "Date"
+		}
+	},
+	"Issue": {
+		"description": {
+			"type": "String"
+		},
+		"objectId": {
+			"type": "String"
+		},
+		"level": {
+			"default": "1",
+			"required": "True",
+			"type": "Number"
+		},
+		"title": {
+			"default": "Untitled",
+			"required": "True",
+			"type": "String"
+		},
+		"profession": {
+			"default": "1",
+			"required": "True",
+			"type": "Number"
+		},
+		"pics": {
+			"type": "Array"
+		},
+		"project": {
+			"className": "Project",
+			"type": "Pointer"
+		},
+		"assignedTo": {
+			"default": "0",
+			"className": "_User",
+			"type": "Pointer"
+		},
+		"replyCount": {
+			"default": "0",
+			"auto_increment": "False",
+			"required": "True",
+			"type": "Number"
+		},
+		"createdBy": {
+			"default": "0",
+			"className": "_User",
+			"required": "True",
+			"type": "Pointer"
+		},
+		"updatedAt": {
+			"type": "Date"
+		},
+		"phase": {
+			"default": "1",
+			"required": "True",
+			"type": "Number"
+		},
+		"createdAt": {
+			"type": "Date"
+		}
+	}
+}
